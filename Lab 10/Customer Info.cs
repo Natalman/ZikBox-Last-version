@@ -127,14 +127,56 @@ namespace Lab_10
                 txtEmail.Focus();
                 return false;
             }
+            //else if (cboCardType.Text == "")
+            //{
+            //    MessageBox.Show(name + " Is a required field.", "Entry Error");
+            //    cboCardType.Focus();
+            //    return false;
+            //}
+            //else if (cboMonth.Text == "")
+            //{
+            //    MessageBox.Show(name + " Is a required field.", "Entry Error");
+            //    cboMonth.Focus();
+            //    return false;
+            //}
+            //else if (cboYear.Text == "")
+            //{
+            //    MessageBox.Show(name + " Is a required field.", "Entry Error");
+            //    cboYear.Focus();
+            //    return false;
+            //}
             else
             {
                 return true;
             }
-
-
-
         }
+
+        public bool IsPresentcbo(ComboBox combobox, string name)
+        {
+            if (cboCardType.Text == "")
+            {
+                MessageBox.Show(name + " Is a required field.", "Entry Error");
+                cboCardType.Focus();
+                return false;
+            }
+            else if (cboMonth.Text == "")
+            {
+                MessageBox.Show(name + " Is a required field.", "Entry Error");
+                cboMonth.Focus();
+                return false;
+            }
+            else if (cboYear.Text == "")
+            {
+                MessageBox.Show(name + " Is a required field.", "Entry Error");
+                cboYear.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
 
         public bool IsValid()
         {
@@ -144,7 +186,10 @@ namespace Lab_10
                 IsPresent(txtAdd1, "Address") &&
                 IsPresent(txtCardNum, "Card Number") &&
                 IsPresent(txtCSC, "CSC Number") &&
-                IsPresent(txtEmail, "Email");
+                IsPresent(txtEmail, "Email") &&
+                IsPresentcbo(cboYear, "Year") &&
+                IsPresentcbo(cboMonth, "Month") &&
+                IsPresentcbo(cboCardType, "Card Type");
 
         }
 
